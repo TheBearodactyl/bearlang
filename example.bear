@@ -1,5 +1,5 @@
 |=> example_table <=|
-example_val => hello!
+example_val => "hello"
 
 |=> other_example_table <=|
 val_ref => (example_table.example_val)

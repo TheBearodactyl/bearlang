@@ -3,7 +3,7 @@ name = @{ char+ }
 value_char = { char | "(" | ")" }
 value_text = @{ value_char* }
 variable = { "(" ~ name ~ "." ~ name ~ ")" }
-value = { variable | value_text }
+value = { variable | QUOTATION_MARK? ~ value_text ~ QUOTATION_MARK? }
 section = { "|=>" ~ name ~ "<=|" }
 property = { name ~ "=>" ~ value }
 file = { SOI ~ ((section | property)? ~ NEWLINE)* ~ EOI }

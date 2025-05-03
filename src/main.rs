@@ -26,7 +26,6 @@ fn main() {
     let mut properties: HashMap<&str, HashMap<&str, String>> = HashMap::new();
     let mut curr_section_name = "";
 
-    // First pass: collect all properties
     for ln in file.into_inner() {
         match ln.as_rule() {
             Rule::EOI => {}
@@ -59,7 +58,6 @@ fn main() {
         }
     }
 
-    // Second pass: resolve variables
     let mut resolved_properties: HashMap<String, HashMap<String, String>> = HashMap::new();
     for (section_name, section_props) in &properties {
         let mut resolved_section = HashMap::new();
