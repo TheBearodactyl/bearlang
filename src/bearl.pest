@@ -1,4 +1,4 @@
-char = { ASCII_ALPHANUMERIC | "." | "_" | "/" }
+char = { PUNCTUATION | ASCII_ALPHANUMERIC | ASCII_DIGIT | SYMBOL }
 name = @{ char+ }
 value_char = { char | "(" | ")" }
 value_text = @{ value_char* }
